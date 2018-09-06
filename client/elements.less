@@ -1,0 +1,69 @@
+@import "main.import.less";
+
+/////////////////////////////////////////////////////////////////////
+// General Site-wide styles
+/////////////////////////////////////////////////////////////////////
+body {
+  font-family: @iface-font-family;
+  font-size: 16px;
+}
+
+h1, {
+  font-weight: bold;
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 48px;
+}
+
+h3 {
+  font-size: 38px;
+  //Override Bootstrap
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+  
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+/////////////////////////////////////////////////////////////////////
+// Site-wide elements
+/////////////////////////////////////////////////////////////////////
+.indent {
+  margin-left: 15px;
+}
+
+.inline {
+  display: inline-block;
+}

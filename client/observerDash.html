@@ -1,0 +1,86 @@
+<template name="ObsDash">
+  <div class="obs-parent">
+    <div class="obs-dash-info">
+      <!-- <div class="row"> -->
+      <div class="ta-view col-sm-8 col-sm-offset-2">
+        <h4>TA Dashboard View</h4>
+        <h4>Description</h4>{{getDesc}}
+        <div class="view"></div>
+      </div>
+      <!-- </div>
+      <div class="row"> -->
+      <div class="feedback-view col-sm-8 col-sm-offset-2">
+        <h4>Your Input</h4>
+        <div class="view">
+          <center>
+            <h1 id="feedback-label">Teacher</h1>
+          </center>
+        </div>
+        <h4>Secondary Text Field</h4>
+        <div class="view">
+          <center>
+            <h1 id="tactic-label">Tactic</h1>
+          </center>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+    <div class="instructions">
+      <h3>Instructions:</h3>
+      <ul>
+        <li class="instruction">
+          <strong>Teacher: </strong> Press "d"
+        </li>
+        <li class="instruction">
+          <strong>Student: </strong> Press "s"
+        </li>
+        <li class="instruction">
+          <strong>Pause: </strong> Press "1"
+        </li>
+        <li class="instruction">
+          <strong>Unpause: </strong> Press "0" (Zero)
+        </li>
+        <li class="instruction">
+          <strong>Timing: </strong> Press "t"
+        </li>
+        {{#each keyMap}}
+        {{> keyMapListing}}
+        {{/each}}
+
+        Use <strong>Shift</strong> to decrement event counted.
+      </ul>
+      <!-- This is the list of the count of events in the DB -->
+        {{#each eventCounters}}
+        {{> eventCount }}
+        {{/each}}
+        <br><br><br>
+        <a href="javascript:window.open('','_self').close();">
+          <button class="btn btn-primary btn-lg">
+            Done
+          </button>
+        </a>
+
+
+    </div>
+</div>
+
+  <div class="hidden key-listener">
+    <input type="hidden">
+  </div>
+</template>
+
+<template name="keyMapListing">
+  <li class="instruction">
+    <strong>{{eventName}}: </strong> Press "{{keyChar}}"
+  </li>
+</template>
+
+<template name="eventCount">
+  <div class="event-count"> {{eventName}} : {{eventCount}}
+  </div>
+</template>
+
+<template name="AnimationView">
+  <div class="animation-view">
+  </div>
+</template>

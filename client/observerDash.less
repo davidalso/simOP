@@ -1,0 +1,42 @@
+@import "main.import.less";
+
+.obs-parent {
+  display: flex;
+  // flex-direction: row;
+}
+
+.obs-dash-info {
+  width: 70%;
+  .ta-view {
+    .view {
+      // width: 70%;
+      height: 100px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      margin-left: 15%;
+      margin-right: 15%;
+      background-color: @mid-blue;
+    }
+    .animation-view {
+      height: 100px;
+      margin: 0;
+      width: 0px;
+    }
+  }
+  .feedback-view {
+    .view {
+      // width: 70%;
+      height: 150px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      margin-left: 15%;
+      margin-right: 15%;
+      background-color: @white;
+      border: 3px solid @dark-grey;
+    }
+    h1 {
+      padding-top: 25px;
+      color: @dark-grey;
+    }
+  }
+}

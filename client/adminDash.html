@@ -1,0 +1,187 @@
+<template name="DataDashboard">
+  {{> CreateSession }}
+  <div class="session-listing row">
+      <h5 class="data-field inline">Date</h5>
+      <h5 class="data-field inline">Me</h5>
+      <h5 class="data-field inline">TA</h5>
+      <h5 class="data-field inline">Week-Session</h5>
+    <div class="session-table col-sm-12">
+      {{#each session}}
+        {{> DataSessionListing }}
+      {{/each}}
+    </div>
+  </div>
+</template>
+
+<template name="CreateSession">
+  <div id="create-session-form" class="row">
+    <h4 class="col-sm-12">Create new data session</h4>
+    <div id="metadata-form" class="col-sm-12">
+
+      <div class="input-group inline">
+        <h5 class="inline">Me:</h5>
+        <select name="Me" id="Me">
+          <option value="" disabled selected>Who are you?</option>
+          <option value="Admin">Admin</option>
+          <option value="SBao">Stephanie Bao</option>
+          <option value="AChaughule">Anushka Chaughule</option>
+          <option value="NChoi">Nawon Choi</option>
+          <option value="SChoi">Sydney Choi</option>
+          <option value="AHodge">Alan Hodge</option>
+          <option value="LNeviadomska">Lera Neviadomska</option>
+          <option value="DRodriguez">Diego Rodriguez</option>
+          <option value="MSafy">Mary Safy</option>
+          <option value="SSill">Sofia Sill</option>
+          <option value="PTai">Priscilla Tai</option>
+          <option value="STruong">Stephanie Truong</option>
+          <option value="TVDavier">Thomas von Davier</option>
+          <option value="AWang">Angie Wang</option>
+          <option value="RW">Rachel W.</option>
+          <option value="GYu">Gloria Yu</option>
+          <option value="SZhao">Sally Zhao</option>
+        </select>
+      </div>
+
+      <div class="input-group inline">
+        <h5 class="inline">TA:</h5>
+        <select name="TA" id="TA">
+          <option value="" disabled selected>Select your option</option>
+          <!-- <option value="ZAhmad">Zeeshan Ahmad</option>
+          <option value="MArmida">Marcos Armida</option>
+          <option value="TBajpai">Tanvi Bajpai</option>
+          <option value="SCohn">Sam Cohn</option>
+          <option value="SCoyle">Stephen Coyle</option>
+          <option value="ZCoker">Zack Franklin Coker</option>
+          <option value="RGoyal">Raghav Goyal</option>
+          <option value="SHawke">Samuel Hawke</option>
+          <option value="MHenry">Megan Henry</option>
+          <option value="NHiehle">Nolan Hiehle</option>
+          <option value="LJahn">Leif Jahn</option>
+          <option value="CJin">Chaoran Jin</option>
+          <option value="JKorn">Josh Korn</option>
+          <option value="AKunts">Anthony Kuntz</option>
+          <option value="HLiao">Hang Liao</option>
+          <option value="JMoavenzadeh">Joshua Moavenzadeh</option>
+          <option value="AMouton">Andre Mouton</option>
+          <option value="VOjha">Vatsal Ojha</option>
+          <option value="JPrak">Jeanne Prak</option>
+          <option value="GSchrag">Gabriel Schrag</option>
+          <option value="WSHo">Weng Shian Ho</option>
+          <option value="TSwayze">Thomas Swayze</option>
+          <option value="RStokes">Rebecca Stokes</option>
+          <option value="SWang">Serena Wang</option>
+          <option value="Wony">Wony</option>
+          <option value="SZhang">Sean Zhang</option>
+          <option value="YZhao">Yan Zhao</option>
+          <option value="EZhu">Eric Zhu</option> -->
+          <!-- <option value="GSchrag">Gabriel Schrag</option> Removed from study -->
+          <!-- <option value="HLiao">Hang Liao</option> Removed from study-->
+          <!-- <option value="JMoavenzadeh">Joshua Moavenzadeh</option> Removed from study -->
+          <!-- <option value="NHiehle">Nolan Hiehle</option> Removed from study -->
+          <!-- <option value="RGoyal">Raghav Goyal</option> Removed from study -->
+          <!-- <option value="ZCoker">Zack Franklin Coker</option> Removed from study -->
+          <option value="TA01">TA01</option> <!-- was Rebecca Stokes -->
+          <option value="TA02">TA02</option> <!-- was Stephen Coyle -->
+          <option value="TA03">TA03</option> <!-- was Marcos Armida -->
+          <option value="TA04">TA04</option> <!-- was Samuel Hawke -->
+          <option value="TA05">TA05</option> <!-- was Yan Zhao -->
+          <option value="TA06">TA06</option> <!-- was Leif Jahn -->
+          <option value="TA07">TA07</option> <!-- was Vatsal Ojha -->
+          <option value="TA08">TA08</option> <!-- was Megan Henry -->
+          <option value="TA09">TA09</option> <!-- was Wony -->
+          <option value="TA10">TA10</option> <!-- was Thomas Swayze -->
+          <option value="TA11">TA11</option> <!-- was Chaoran Jin -->
+          <option value="TA12">TA12</option> <!-- was Weng Shian Ho -->
+          <option value="TA13">TA13</option> <!-- was Sam Cohn -->
+          <option value="TA14">TA14</option> <!-- was Jeanne Prak -->
+          <option value="TA15">TA15</option> <!-- was Serena Wang -->
+          <option value="TA16">TA16</option> <!-- was Zeeshan Ahmad -->
+          <option value="TA17">TA17</option> <!-- was Tanvi Bajpai -->
+          <option value="TA18">TA18</option> <!-- was Sean Zhang -->
+          <option value="TA19">TA19</option> <!-- was Anthony Kuntz -->
+          <option value="TA20">TA20</option> <!-- was Josh Korn -->
+          <option value="TA21">TA21</option> <!-- was Andre Mouton -->
+          <option value="TA22">TA22</option> <!-- was Eric Zhu -->
+          <!-- <option value="GSchrag">Gabriel Schrag</option> Removed from study -->
+          <!-- <option value="HLiao">Hang Liao</option> Removed from study-->
+          <!-- <option value="JMoavenzadeh">Joshua Moavenzadeh</option> Removed from study -->
+          <!-- <option value="NHiehle">Nolan Hiehle</option> Removed from study -->
+          <!-- <option value="RGoyal">Raghav Goyal</option> Removed from study -->
+          <!-- <option value="ZCoker">Zack Franklin Coker</option> Removed from study -->
+        </select>
+      </div>
+      <div class="input-group inline">
+        <h5 class="inline">Week:</h5>
+        <select name="Week" id="Week">
+          <option value="" disabled selected>Select your option</option>
+          <option value="1">Week 1: 1/22-1/26</option>
+          <option value="2">Week 2: 1/29-2/2</option>
+          <option value="3">Week 3: 2/5-2/9</option>
+          <option value="4">Week 4: 2/12-2/16</option>
+          <option value="5">Week 5: 2/19-2/23</option>
+          <option value="6">Week 6: 2/26-3/2</option>
+          <option value="7">Week 7: 3/5-3/9</option>
+          <option value="8">Week 8: 3/12-3/16</option>
+          <option value="9">Week 9: 3/19-3/23</option>
+          <option value="10">Week 10: 3/26-3/30</option>
+          <option value="11">Week 11: 4/2-4/6</option>
+          <option value="12">Week 12: 4/9-4/13</option>
+          <option value="13">Week 13: 4/16-4/20</option>
+          <option value="14">Week 14: 4/23-4/27</option>
+          <option value="15">Week 15: 4/30-5/4</option>
+        </select>
+      </div>
+      <div class="input-group inline">
+        <h5 class="inline">Session Day:</h5>
+        <select name="Class-session" id="Class-session">
+          <option value="" disabled selected>Select your option</option>
+          <option value="1">1: Monday</option>
+          <option value="2">2: Tuesday</option>
+          <option value="3">3: Wednesday</option>
+          <option value="4">4: Thursday</option>
+          <option value="5">5: Friday</option>
+        </select>
+      </div>
+
+      <div style="visibility: hidden;">
+        <h5 class="inline">Tactics to show TA:</h5>
+        {{#each tactics}}
+          {{> TacticCheckbox}}
+        {{/each}}
+      </div>
+      <button class="create-session btn btn-primary btn-lg">
+        Create
+      </button>
+    </div>
+  </div>
+</template>
+
+
+
+<template class="hidden" name="TacticCheckbox">
+  <input class="tactic-input" type="checkbox" checked="true" name="{{tacticName}}"><label>{{tacticName}}</label>
+</template>
+<template name="DataSessionListing">
+  <div class="data-row col-sm-12">
+    <h5 class="data-field inline">{{getDate}}</h5>
+    <h5 class="data-field inline">{{Me}}</h5>
+    <h5 class="data-field inline">{{ta}}</h5>
+    <h5 class="data-field inline">{{Week}}-{{csesh}}</h5>
+    <!--
+    <a target="_blank" href="{{urlFor route="TADashboard" data=getData}}">
+      <h5 class="url-field inline">{{urlFor route="TADashboard" data=getData}}</h5>
+    </a>
+  -->
+    <a target="_blank" href="{{urlFor route="ObserverDashboard" data=getData}}">
+      <button class="observer-dash btn btn-primary btn-lg">
+        Observer
+      </button>
+    </a>
+    <a target="_blank"  href="{{formUrl}}{{pathFor route="api.getSessionData" data=getData}}">
+      <button class="download-data btn btn-primary btn-lg">
+        <i class="fa fa-upload"></i>
+        ClassInSight
+      </button>
+    </a>
+  </div>
+</template>

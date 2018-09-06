@@ -1,0 +1,35 @@
+//Colors
+@dark-grey: #444444;
+@mid-grey: #637072;
+@light-grey: #A1A2A2;
+@vl-grey: #DDD;
+@dark-blue: #287CBE;
+@mid-blue: #3366CC;
+@light-blue: #5BB1E2;
+@orange: #FF6600;
+@green: #66CC33;
+@white: #FFF;
+
+//Fonts
+@content-font-family: 'Lora';
+@iface-font-family: 'Karla';
+
+//Button Styles:
+@sm-btn-radius: 6px;
+@lg-btn-radius: 2*@sm-btn-radius;
+@btn-font-size: 20px;
+
+//Navbar styles
+@nav-height: 80px;
+
+//Mixins
+.clickable() {
+    cursor: pointer;
+
+    &:hover {
+      background-color: @orange;
+      color: @white;
+      text-decoration: none;
+    }
+}
+
